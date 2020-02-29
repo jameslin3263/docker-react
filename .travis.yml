@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t jameslin3263/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run jameslin3263/docker-react -- --coverage
